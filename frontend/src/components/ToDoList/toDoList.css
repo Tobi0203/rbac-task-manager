@@ -1,0 +1,361 @@
+.taskHeader{
+  width: 100%;
+  padding: 20px;
+  background-color: #3b82f6;
+  font-weight: bolder;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.taskHeader h1{
+  margin: 0;
+}
+/* Hamburger icon (hidden on desktop) */
+.menuIcon {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+}
+.mainToDo {
+  display: flex;
+  gap: 10px;
+  height: 90vh;
+  margin: 2px;
+  border-radius: 10px;
+}
+.userEmail{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+}
+
+.toDoMenu {
+  width: 20%;
+  box-shadow: 5px 0 10px -2px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  border-radius: 5px;
+  /* justify-content: center; */
+}
+.closeMenuIcon{
+  display: none;
+}
+.optionHead {
+  margin: 20px;
+}
+
+.toDoOption {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-button {
+  padding: 12px 20px;
+  border: none;
+  text-align: left;
+  background-color: #f0f0f0;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-button:hover {
+  background-color: #aed0d8;
+}
+
+.active-button {
+  border-right: 5px solid #3b82f6;
+  /* Blue color on the left */
+  background-color: #acbcd4;
+  font-weight: bold;
+}
+
+/* Right side container */
+.rightContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+/* Top summary section */
+.toDosum {
+  height: auto;
+  /* Adjust as needed */
+  box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.toDoSumHead h1,.toDoSumHead p{
+  margin: 10px;
+}
+
+.toDoSumCont{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+.toDoSumCont div{
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
+  border-left: 2px solid #3b82f6;
+  border-top: 2px solid #3b82f6;
+  border-radius: 5px;
+}
+
+.toDoList {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+.toDoListHead{
+  margin: 5px 15px;
+}
+.taskListContainer {
+  width: 100%;
+  margin: 10px 0;
+  font-family: sans-serif;
+}
+.taskListHeader,
+.taskCard {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: -5px 0px 10px -2px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+.taskListHeader {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.taskCell {
+  flex: 1;
+  text-align: left;
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.name {
+  flex: 2;
+  max-width: 200px;
+}
+.taskCard {
+  border-radius: 10px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.task-pending {
+  box-shadow: -5px 0px 10px -2px rgb(222, 145, 12);
+  border-right: 3px solid rgb(222, 145, 12);
+}
+
+.task-inprogress {
+  box-shadow: -5px 0px 10px -2px rgba(35, 181, 217, 0.828);
+  border-right: 3px solid rgba(35, 181, 217, 0.828);
+}
+
+.task-completed {
+  box-shadow: -5px 0px 10px -2px rgb(7, 249, 43);
+  border-right: 3px solid rgb(7, 249, 43);
+}
+/* .taskOptionsIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.taskOptionsIcon:hover {
+  background-color: #eee;
+}
+
+.taskDropdown {
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 1000;
+  min-width: 120px;
+}
+
+.dropdownItem {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f0f0f0;
+} */
+
+
+/* Tablet Devices (≤ 1024px) */
+@media screen and (max-width: 768px) {
+  .mainToDo {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .toDoMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  .closeMenuIcon{
+  display: block;
+}
+  .toDoOption {
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .option-button,
+  .addTask {
+    flex: 1 1 45%;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .rightContainer {
+    width: 100%;
+  }
+
+  .toDoSumCont {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .toDoSumCont div {
+    width: 45%;
+  }
+
+  .taskListHeader,
+  .taskCard {
+    font-size: 14px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .taskCell {
+    padding: 10px 4px;
+  }
+
+  .name {
+    flex: 1;
+    max-width: 120px;
+  }
+  /* .taskOptionsIcon{
+    right: 0;
+  } */
+}
+
+/* Mobile Devices (≤ 600px) */
+@media screen and (max-width: 600px) {
+  .taskHeader h1{
+  font-size: 30px;
+}
+  .toDoMenu{
+    flex-direction: column;
+  }
+  .option-button,
+  .addTask {
+    flex: 1 1 100%;
+  }
+
+  .taskListHeader,
+  .taskCard {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 20px;
+  }
+
+  .taskCell,
+  .name {
+    /* flex: none; */
+    width: 100%;
+    max-width: 100%;
+    padding: 2px 0;
+  }
+
+
+  .taskCard {
+    border-left: 4px solid #ccc;
+    padding: 10px 20px;
+  }
+
+  .toDoSumCont div {
+    width: 100%;
+  }
+
+  .toDoSumHead h1 {
+    font-size: 18px;
+  }
+
+  .toDoListHead h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+ .menuIcon {
+    display: block;
+  }
+
+  .toDoMenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* start hidden offscreen to the right */
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .toDoMenu.showMenu {
+    right: 0; /* slide in */
+  }
+
+  .mainToDo {
+    flex-direction: column;
+    position: relative;
+  }
+}

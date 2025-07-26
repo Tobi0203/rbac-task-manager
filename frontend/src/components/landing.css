@@ -1,0 +1,24 @@
+.landing-container {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #f0f4f8, #d9e2ec);
+  min-height: 100vh;
+}
+
+.landing-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.landing-container p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.features div {
+  font-size: 1rem;
+  margin: 10px 0;
+}

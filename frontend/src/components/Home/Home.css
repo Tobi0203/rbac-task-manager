@@ -1,0 +1,21 @@
+/* home.css */
+.home-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.user-details {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.logout-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
