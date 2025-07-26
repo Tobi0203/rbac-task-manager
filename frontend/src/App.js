@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
 import Navbar from "./components/navbar/navbar.js";
 import LandingPage from "./components/landing.js";
 import Login from "./components/login/login.js";
@@ -18,11 +19,36 @@ import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   useEffect(() => {
-    setIsLoggedIn(!!localStorage.getItem("token"));
-  }, [location]);
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        const currentTime = Date.now() / 1000;
+
+        if (decoded.exp < currentTime) {
+          // Token has expired
+          localStorage.clear();
+          setIsLoggedIn(false);
+          navigate("/login");
+        } else {
+          setIsLoggedIn(true);
+        }
+      } catch (error) {
+        console.error("Token decode error:", error);
+        localStorage.clear();
+        setIsLoggedIn(false);
+        navigate("/login");
+      }
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [location, navigate]);
+
   return (
     <>
       {!isLoggedIn && <Navbar />}
